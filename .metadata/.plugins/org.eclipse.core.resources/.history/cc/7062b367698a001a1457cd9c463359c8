@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" 
+	xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{template1.html}">
+	<head>
+	<meta charset="utf-8">
+	<title>Ma Banque</title>
+		<link rel="stylesheet" 
+		href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" 
+		href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" 
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<header>
+			<div class="navbar navbar-default">
+				<div class="container-fluid">
+					<ul class="nav nav-pills" role="tablist">
+						<li role="presentation"><a th:href="@{/operations}">Operation <span class="badge">6</span></a></li>
+						<li role="presentation"><a th:href="@{/comptes}">Comptes</a></li>
+						<li role="presentation"><a th:href="@{/clients}">Client <span class="badge">3</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<section>
+			<div class="col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Consultation d'un compte</div>
+					<div class="panel-body">
+						<form th:action="@{/consulterCompte}" method="get">
+							<div>
+								<label>Numéro du Compte:</label>
+								<input type="text" name="codeCompte"/>
+								<button type="submit" class="btn btn-primary">OK</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				
+				<div class="panel panel-primary" th:if="${compte}">
+					<div class="panel-heading">Information sur le compte</div>
+					<div class="panel-body">
+						<div>
+							<label>Numéro du Compte: </label>
+							<label th:text="${compte.codeCompte}"></label>
+						</div>
+						<div>
+							<label>Solde du compte: </label>
+							<label th:text="${compte.solde}"></label>
+						</div>
+						<div>
+							<label>Crée le: </label>
+							<label th:text="${compte.dateCreation}"></label>
+						</div>
+						<div>
+							<label>Type de compte: </label>
+							<label th:text="${compte.class.simpleName}"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-primary" th:if="${compte}">
+					<div class="panel-heading">Opérations (Versement/Virement/Retrait)</div>
+					<div class="panel-body">
+					</div>
+				</div>
+				
+				<div class="panel panel-primary" th:if="${compte}">
+					<div class="panel-heading">Liste des Opérations éffectuées</div>
+					<div class="panel-body">
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Footer -->
+		<footer class="page-footer font-small special-color-dark pt-4">
+		<div class="navbar-fixed-bottom">
+		  <!-- Footer Elements -->
+		  <div class="container">
+		
+		    <!-- Social buttons -->
+		    <ul class="list-unstyled list-inline text-center">
+		      <li class="list-inline-item">
+		        <a class="btn-floating btn-fb mx-1">
+		          <i class="fab fa-facebook-f"> </i>
+		        </a>
+		      </li>
+		      <li class="list-inline-item">
+		        <a class="btn-floating btn-tw mx-1">
+		          <i class="fab fa-twitter"> </i>
+		        </a>
+		      </li>
+		      <li class="list-inline-item">
+		        <a class="btn-floating btn-gplus mx-1">
+		          <i class="fab fa-google-plus-g"> </i>
+		        </a>
+		      </li>
+		      <li class="list-inline-item">
+		        <a class="btn-floating btn-li mx-1">
+		          <i class="fab fa-linkedin-in"> </i>
+		        </a>
+		      </li>
+		      <li class="list-inline-item">
+		        <a class="btn-floating btn-dribbble mx-1">
+		          <i class="fab fa-dribbble"> </i>
+		        </a>
+		      </li>
+		    </ul>
+		    <!-- Social buttons -->
+		
+		  </div>
+		  <!-- Footer Elements -->
+		
+		  <!-- Copyright -->
+		  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+		    <a href="https://mdbootstrap.com/"> MaBanque.com</a>
+		  </div>
+		  <!-- Copyright -->
+		</div>
+		</footer>
+	</body>
+</html>

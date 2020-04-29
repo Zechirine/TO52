@@ -1,3 +1,6 @@
 1588180434729	Move 2 resources to 'static'
 1588180660788	Delete element
 1588183359369	Delete element
+1588191620548	Move 'Layout.html' to 'layout'
+1588191622882	Move 'template1.html' to 'layout'
+1588193929716	Move 'template1.html' to 'templates'

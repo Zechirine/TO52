@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:layout="https://github.com/ultraq/thymeleaf-layout-dialect.git"
+	layout:decorate="template1">
+<head>
+<meta charset="utf-8">
+<title>Ma Banque</title>
+</head>
+<body>
+	<div>
+		<h3>Test</h3>
+	</div>
+</body>
+</html>
