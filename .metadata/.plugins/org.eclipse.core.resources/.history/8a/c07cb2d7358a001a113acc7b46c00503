@@ -1,0 +1,10 @@
+package com.to52.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.to52.entities.Operation;
+
+public interface OperationRepository
+extends JpaRepository<Operation, Long>{
+
+}

@@ -1,0 +1,5 @@
+package com.to52.metier;
+
+public class BanqueMetierImpl {
+
+}

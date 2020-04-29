@@ -1,0 +1,5 @@
+package com.to52.dao;
+
+public interface CompteRepository {
+
+}
